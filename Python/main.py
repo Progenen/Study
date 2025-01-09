@@ -1,19 +1,18 @@
-Tovar = {
-    "Table": 3,
-    "Chair": 1,
-    "TV": 10
-}
+from modules.numWork import is_lucky_number, can_form_word, print_military_employees
+import modules.numWork as lib
+from importlib import reload 
+from modules.module import squareTriangle 
 
-Cart = {}
+reload(lib)
 
-def startDiscount (per, tovar):
-    for item in tovar:
-        tovar[item] = tovar[item] - (tovar[item] / 100 * per)
-        print(tovar[item])
-     
-startDiscount(10, Tovar)
+# employees = [
+#     ("Иванов", "военнообязанный"),
+#     ("Петров", "невоеннообязанный"),
+#     ("Сидоров", "военнообязанный")
+# ]
 
+# print_military_employees(employees)
+# print(is_lucky_number(100001))
+# print(can_form_word("лес", "сел"))
 
-
-print('Максимальная цена: ', max(Tovar.items(), key=lambda k_v: k_v[1])[0])
-print('Минимальная цена:', min(Tovar.items(), key=lambda k_v: k_v[1])[0])
+print(squareTriangle(4, 4, 5))
